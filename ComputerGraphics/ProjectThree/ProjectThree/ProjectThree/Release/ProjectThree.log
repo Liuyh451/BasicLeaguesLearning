@@ -1,0 +1,18 @@
+﻿生成启动时间为 2020/3/30 20:27:55。
+     1>项目“F:\CG\上机\ProjectThree\ProjectThree\ProjectThree.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Release\ProjectThree.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ProjectThree.cpp
+         ProjectThree.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\CG\上机\ProjectThree\Release\ProjectThree.exe" /INCREMENTAL:NO /NOLOGO SOIL.lib glut32.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\ProjectThree.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\CG\上机\ProjectThree\Release\ProjectThree.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\CG\上机\ProjectThree\Release\ProjectThree.lib" /MACHINE:X86 Release\cgPoint3D.obj
+         Release\cgSphere.obj
+         Release\cgTriangle.obj
+         Release\ProjectThree.obj
+     1>LINK : fatal error LNK1104: 无法打开文件“F:\CG\上机\ProjectThree\Release\ProjectThree.exe”
+     1>已完成生成项目“F:\CG\上机\ProjectThree\ProjectThree\ProjectThree.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.42
