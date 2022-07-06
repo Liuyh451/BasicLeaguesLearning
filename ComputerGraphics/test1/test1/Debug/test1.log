@@ -1,0 +1,23 @@
+﻿  test1.cpp
+C:\Users\86156\source\repos\test1\test1\test1.cpp(17,10): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(17,24): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(17,53): warning C4305: “初始化”: 从“double”到“float”截断
+C:\Users\86156\source\repos\test1\test1\test1.cpp(22,19): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(22,56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(24,19): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(24,56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(41,10): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(41,24): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(41,53): warning C4305: “初始化”: 从“double”到“float”截断
+C:\Users\86156\source\repos\test1\test1\test1.cpp(46,19): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(46,56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(48,19): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(48,56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(95,10): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(95,24): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(95,53): warning C4305: “初始化”: 从“double”到“float”截断
+C:\Users\86156\source\repos\test1\test1\test1.cpp(100,19): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(100,56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(102,19): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\source\repos\test1\test1\test1.cpp(102,56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  test1.vcxproj -> C:\Users\86156\source\repos\test1\Debug\test1.exe
