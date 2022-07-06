@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1592026557 source:c:\acm\11\main.c
+	<stdio.h>
+	<stdbool.h>
+	<time.h>
+
