@@ -1,0 +1,2 @@
+在hosts文件中加入了对gitkraken的拦截
+在防火墙入站规则加入了对gitkraken update的拦截
