@@ -1,0 +1,23 @@
+﻿  cgCylinder.cpp
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(28,15): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(40,11): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(41,13): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(46,12): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(47,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(48,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(49,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(51,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(52,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(54,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(55,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(57,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(58,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(81,75): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(81,50): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(83,76): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\ProjectFour\cgCylinder.cpp(83,50): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+SOILd.lib(image_DXT.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“SOILd.lib(image_DXT.obj)”或在“C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\Debug\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+SOILd.lib(image_helper.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“SOILd.lib(image_helper.obj)”或在“C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\Debug\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+SOILd.lib(SOIL.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“SOILd.lib(SOIL.obj)”或在“C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\Debug\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+SOILd.lib(stb_image_aug.obj) : warning LNK4099: 未找到 PDB“”(使用“SOILd.lib(stb_image_aug.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+  ProjectFour.vcxproj -> C:\Users\86156\Documents\Tencent Files\2357996825\FileRecv\projectfour\projectfour\Debug\ProjectFour.exe
