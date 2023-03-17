@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Document</title>
+        <script type="text/javascript" src="../JS/vue.js"></script>
+    </head>
+    <body>
+        
+        <div id="lyh">
+            <p>this is {{word}}</p>
+            <a :href="url">click me,go to baidu</a>
+        </div>
+        <script type="text/javascript">
+            new Vue({
+                el:"#lyh",
+                data:{
+                    word:"hello11111111111111",
+                    url:"https://baidu.com"
+                    
+                }
+            })
+        </script>
+    </body>
+</html>
