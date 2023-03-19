@@ -85,6 +85,11 @@
           <li>4</li>
         </ul>
       </div>
+      <div>
+        <!-- 键盘事件 -->
+        <input type="text" placeholder="按下回车" @keyup.enter="showInfo">
+        <!-- 对于两个单词的如caplock，必须用cap-lock -->
+      </div>
     </div>
   </body>
   <script type="text/javascript">
@@ -113,6 +118,10 @@
           }
           console.log("done");
         },
+        showInfo(e){
+          console.log(e.key,e.keyCode)
+          console.log(e.target.value)
+        }
       },
     });
   </script>
