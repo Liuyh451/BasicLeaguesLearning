@@ -1,25 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Document</title>
-        <script type="text/javascript" src="../JS/vue.js"></script>
-    </head>
-    <body>
-        
-        <div id="lyh">
-            <p>this is {{word}}</p>
-            <a :href="url">click me,go to baidu</a>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Revivew</title>
+    <script type="text/javascript" src="../JS/vue.js"></script>
+    <style>
+      /* 通配符，让所有元素都间隔10px */
+      * {
+        margin: 10px;
+      }
+      .demo1 {
+        background-color: aquamarine;
+      }
+      .box1 {
+        padding: 5px;
+        background-color: skyblue;
+      }
+      .box2 {
+        padding: 5px;
+        background-color: coral;
+      }
+      .list {
+        height: 200px;
+        width: 400px;
+        background-color: green;
+        overflow: auto;
+      }
+      li {
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>复习VUE</h3>
+    <div id="lyh">
+      <!-- 阻止默认事件 这个.prevent作用和下面e.preventDefault()作用一样，也叫事件修饰符-->
+      <a :href="url" @click.prevent="showInfo1">click me,go to baidu</a><br />
+      <input type="text" v-bind:value="name" /><!--单向数据绑定-->
+      <!-- <input type="text" :value="name"> 上面的可以简写为这个形式-->
+      <!-- <input type="text" v-model:value="name"> 双向数据绑定，输入框的值变化，name的值也变-->
+      <p>this is {{name}}</p>
+      <button @click="showInfo1">click me</button>
+      <button @click="showInfo2(888)">click me(传参)</button>
+      <!-- <button v-on:click="showInfo">click me</button>这两种写法一样 -->
+      <!-- ↓这个div有两层响应，会出来两次弹窗，用来演示阻止冒泡 -->
+      <div class="demo1" @click="showInfo1">
+        <!-- 加stop阻止冒泡 -->
+        <button @click.stop="showInfo1">加stop阻止冒泡</button>
+        <button @click="showInfo1">不加stop</button>
+      </div>
+      <!-- 演示once触发一次 -->
+      <button @click.once="showInfo1">演示once触发一次</button>
+      <!-- 演示捕获事件
+        冒泡事件是由内向外，点内能触发外输出顺序是2->1
+        捕获事件刚好相反,输出顺序是1->2
+        加capture是捕获
+       -->
+      <div class="box1" @click.capture="showMsg(1)">
+        外层
+        <div class="box2" @click.capture="showMsg(2)">
+          内层
+          <button>演示捕获事件</button>
         </div>
-        <script type="text/javascript">
-            new Vue({
-                el:"#lyh",
-                data:{
-                    word:"hello11111111111111",
-                    url:"https://baidu.com"
-                    
-                }
-            })
-        </script>
-    </body>
+      </div>
+      <!-- 演示self -->
+      <div class="demo1" @click.self="showInfo1">
+        <button @click.stop="showInfo1">演示self</button>
+      </div>
+      <div>
+        <!-- 演示passive -->
+        <ul @scroll="roll" class="list">
+          <!-- 滑条滚动时，直接响应默认函数 不等回执-->
+          滑条滚动
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+        <ul @wheel.passive="roll" class="list">
+          <!-- 滚轮滚动 先等回执结束 再响应默认函数  -->
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    new Vue({
+      el: "#lyh",
+      data: {
+        word: "hello11111111111111",
+        url: "https://baidu.com",
+        name: "111",
+      },
+      methods: {
+        showInfo1(e) {
+          //e.stopPropagation()阻止冒泡
+          // e.preventDefault()//用来阻止默认事件发送比如a标签的跳转事件,函数参数要加e
+          alert("good job!!!");
+        },
+        showInfo2(number) {
+          alert(number + "good job!!!");
+        },
+        showMsg(number) {
+          console.log(number);
+        },
+        roll() {
+          for (let i = 0; i < 10000; i++) {
+            console.log("#");
+          }
+          console.log("done");
+        },
+      },
+    });
+  </script>
 </html>
