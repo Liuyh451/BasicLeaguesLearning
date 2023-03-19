@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <!-- 姓名案例 -->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Revivew</title>
+    <script type="text/javascript" src="../JS/vue.js"></script>
+  </head>
+  <body>
+    <div id="EX">
+      姓<input type="text" v-model="firstName" /> 名<input
+        type="text"
+        v-model="lastName"
+      />
+      <br />
+      全名：<span>{{fullName()}}</span>
+      <!-- 花括号里面函数要加（），读取的是函数的返回值，否则读取的是函数本体 -->
+    </div>
+  </body>
+  <script type="text/javascript">
+    new Vue({
+      el: "#EX",
+      data: {
+        firstName: "liu",
+        lastName: "yahui",
+      },
+      methods: {
+        fullName() {
+          return this.firstName+this.lastName
+          //data.firstName + data.lastName;不好使此处的对象为vue实例
+        },
+      },
+    });
+  </script>
+</html>
