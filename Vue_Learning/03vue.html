@@ -1,40 +1,79 @@
 <!DOCTYPE html>
 <html lang="zh">
-<!-- <html lang="en"> 向搜索引擎表示该页面是html语言,并且语言为英文网站 -->
-<head>
-    <meta charset="UTF-8">
+  <!-- <html lang="en"> 向搜索引擎表示该页面是html语言,并且语言为英文网站 -->
+  <head>
+    <meta charset="UTF-8" />
     <title>绑定样式</title>
     <script type="text/javascript" src="../JS/vue.js"></script>
     <style>
-        .style1{
-            background-color: aqua;
-        }
-        .style2{
-            background-color: coral;
-        }
-        .style3{
-            background-color: rgb(53, 16, 221);
-        }
+      * {
+        padding: 5px;
+      }
+      .style1 {
+        background-color: rgb(231, 120, 157);
+        height: 100px;
+
+      }
+      .style2 {
+        background-color: coral;
+      }
+      .style3 {
+        background-color: rgb(53, 16, 221);
+      }
+      .style4 {
+        font-family: "Courier New", Courier, monospace;
+      }
+      .style5 {
+        background-color: aqua;
+      }
+      .style6 {
+        font-size: larger;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root">
-        <div class="style1" :class="change" @click="changeStyle"> 1
-        </div>
+      <div>
+        绑定class样式
+        <!-- 字符串写法 每次只生效一个样式，点击后切换 -->
+        <div class="style1" :class="change" @click="changeStyle">字符串写法</div>
+        <br />
+        <!-- 数组写法 多个样式同时生效，也可以通过方法修改数组的值，进而修改样式 -->
+        <div class="style1" :class="classArr">数组写法</div>
+        <!-- 对象写法 通过控制布尔值控制样式是否生效 -->
+        <div class="style1" :class="classObj">对象写法</div>
+      </div>
+      <div>
+        绑定style样式
+        <div class="style1" :style="styleObj">33333</div>
+        <!-- <div class="style1" :style="[styleObj1,styleObj2]">33333</div> 甚至可以数组嵌套对象-->
+      </div>
     </div>
-</body>
-<script type="text/javascript">
-    new Vue({
-        el:"#root",
-        data:{
-            change:"style2"
+  </body>
+  <script type="text/javascript">
+    const vm = new Vue({
+      el: "#root",
+      data: {
+        classArr: ["style4", "style6", "style5"],
+        classObj: {
+          style4: true,
+          style5: false,
+          style6: false,
         },
-        methods: {
-            changeStyle(){
-                this.change="style3"
-                console.log("1")
-            }
+        styleObj:{
+            fontSize:"30px"//fontSize===font-size，同理的还有backgroundColor===background-color，用驼峰代替连接符
         },
-    })
-</script>
+        change: "style2",
+      },
+      methods: {
+        changeStyle() {
+          const arr = ["style1", "style2", "style3"];
+          let x = Math.floor(Math.random() * 3);
+          this.change = arr[x];
+          console.log(this.change, x);
+          return this.change;
+        },
+      },
+    });
+  </script>
 </html>
