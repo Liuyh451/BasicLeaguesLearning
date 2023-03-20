@@ -1,6 +1,6 @@
 <!DOCTYPE html>
+<!-- 计算属性 -->
 <html>
-  <!-- 姓名案例 -->
   <head>
     <meta charset="UTF-8" />
     <title>Vue Revivew</title>
@@ -8,28 +8,123 @@
   </head>
   <body>
     <div id="EX">
-      姓<input type="text" v-model="firstName" /> 名<input
-        type="text"
-        v-model="lastName"
-      />
-      <br />
-      全名：<span>{{fullName()}}</span>
-      <!-- 花括号里面函数要加（），读取的是函数的返回值，否则读取的是函数本体 -->
+      <!-- 姓名案例 -->
+      <div>
+        姓<input type="text" v-model="firstName" /> 名<input
+          type="text"
+          v-model="lastName"
+        />
+        <br />
+        全名：<span>methdos方法实现=====>{{fullName()}}</span>
+        <br />
+        <!-- 花括号里面函数要加（），读取的是函数的返回值，否则读取的是函数本体 -->
+        全名：<span>计算属性实现=====>{{fullName_comp}}</span>
+        <br />
+        全名：<span>计算属性简写实现=====>{{fullName_comp}}</span>
+        <!-- 计算属性实现 -->
+      </div>
+      <div>
+        <!-- 天气案例 -->
+        <!-- 监视属性 -->
+        <span>今天天气很{{info}}=====>监视属性</span>
+        <button @click="changeWeather">切换</button>
+        <!-- <button @click="this.isHot = !this.isHot">切换</button>click冒号中可以写一些简单的语句 -->
+        <br />
+        <!-- 深度监视 -->
+        <span>a的值是{{number.a}}=====>深度监视</span>
+        <button @click="number.a++">a+1</button>
+      </div>
     </div>
   </body>
   <script type="text/javascript">
-    new Vue({
+    const vm = new Vue({
       el: "#EX",
       data: {
         firstName: "liu",
         lastName: "yahui",
+        isHot: true,
+        number: {
+          a: 1,
+          b: 2,
+        },
       },
       methods: {
         fullName() {
-          return this.firstName+this.lastName
+          return this.firstName + this.lastName;
           //data.firstName + data.lastName;不好使此处的对象为vue实例
         },
+        changeWeather() {
+          this.isHot = !this.isHot;
+          return this.isHot;
+        },
+      },
+      computed: {
+        // 只读不改的时候可以用简写,当作函数来使用，：function也能省略
+        // fullName_comp:function(){
+        //   return this.firstName + this.lastName;
+        // },
+        // 下面的这种叫配置对象
+        fullName_comp: {
+          get() {
+            return this.firstName + this.lastName;
+          },
+          set(value) {
+            return value;
+          },
+        },
+        info() {
+          return this.isHot ? "热" : "冷";
+        },
+      },
+      //用这种方法也可以实现名字
+      // watch: {
+      //   firstName: function (val) {
+      //     this.fullName = val + " " + this.lastName;
+      //   },
+      //   lastName: function (val) {
+      //     this.fullName = this.firstName + " " + val;
+      //   },
+      // },
+      // 监视属性1
+      watch: {
+        // 简写形式，不能配置deep和immediate之类的属性//////////
+        // isHot(newV, oldV){
+        //   console.log("changed")
+        // },
+        // 标准形式///////////////////////////////////////
+        isHot: {
+          immediate: true, //初始化时调用一下handler
+          handler(newV, oldV) {
+            console.log(newV, oldV);
+          },
+        },
+        // 简写为number.a会报错，键要加引号，用标准写法，在两层监视的时候
+        // "number.a": {
+        //   handler(newV, oldV) {
+        //     console.log(newV, oldV);
+        //   },
+        // },
+        // ============================================================
+        // 深度监视
+        number: {
+          deep: true,
+          handler(newV, oldV) {
+            console.log(newV, oldV);
+          },
+        },
+        // ==========================================================
       },
     });
+
+    // 监视属性2 两种写法一样
+    // vm.$watch("isHot", {
+    //   handler(newV, oldV) {
+    //     console.log(newV, oldV);
+    //   },
+    // });
+    // 简写↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+    // vm.$watch("isHot", function (newV, oldV) {
+    //   console.log("changed");
+    // });
   </script>
 </html>
