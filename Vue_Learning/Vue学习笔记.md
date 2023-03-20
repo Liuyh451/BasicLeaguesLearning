@@ -36,6 +36,10 @@ el:'#root' //#绑定的是id （css），.root绑定class
 
 <todo> 查箭头函数和普通函数
 
+对于windows管理的函数需要使用箭头函数，比如定时器等。
+
+对于vue实例管理的函数，使用普通函数
+
 data:function()可以简写成data(){}
 
 ![image-20230317202133120](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230317202133120.png)
@@ -49,3 +53,23 @@ data:function()可以简写成data(){}
 ## 4.Object.defineProperty
 
 ![image-20230317205033132](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230317205033132.png)
+
+## 5.数据代理
+
+## 6.事件处理
+
+## 7.计算属性
+
+![image-20230320170538053](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230320170538053.png)
+
+## 8. 监视属性
+
+![image-20230320175722436](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230320175722436.png)
+
+### 8.1 深度监视
+
+![image-20230320181119139](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230320181119139.png)
+
+### 8.2 computed和watch对比
+
+![image-20230320190645890](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230320190645890.png)
