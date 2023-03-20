@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<!-- <html lang="en"> 向搜索引擎表示该页面是html语言,并且语言为英文网站 -->
+<head>
+    <meta charset="UTF-8">
+    <title>绑定样式</title>
+    <script type="text/javascript" src="../JS/vue.js"></script>
+    <style>
+        .style1{
+            background-color: aqua;
+        }
+        .style2{
+            background-color: coral;
+        }
+        .style3{
+            background-color: rgb(53, 16, 221);
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="style1" :class="change" @click="changeStyle"> 1
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el:"#root",
+        data:{
+            change:"style2"
+        },
+        methods: {
+            changeStyle(){
+                this.change="style3"
+                console.log("1")
+            }
+        },
+    })
+</script>
+</html>
