@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>渲染</title>
+    <script type="text/javascript" src="../JS/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h2>条件渲染</h2>
+      <!-- v-if和v-show的区别：前者直接删掉了这个元素，后者只是隐藏起来了 -->
+      <!-- 当元素需要频繁隐藏，复现的时候建议使用后者 -->
+      <h3>当前n的值为{{n}}</h3>
+      <button @click="n++">click</button>
+      <button @click="n=0">rollback_n</button>
+      <span v-if="n===1">条件渲染1</span>
+      <span v-else-if="n===2">条件渲染4</span>
+      <!-- <div>@</div> -->
+      <span v-else-if="n===3">条件渲染5</span>
+      <span v-else>条件渲染9</span>
+      <!-- 注意if-elseif的区别，且这个条件判断不能别打断，比如加个@，就会导致后面两个判断失效，并报错 -->
+      <span v-show="n===1">条件渲染2</span>
+      <span v-show="n===2">条件渲染3</span>
+      <!-- 包裹起来可以提高效率，不用对每个标签写if，用tempalte而不用div的原因：不会改变结构。这里只能用v-if不能用v-show -->
+      <template v-if="n===1">
+        <h3>1</h3>
+        <h3>2</h3>
+        <h3>3</h3>
+      </template>
+      <!-- 列表渲染==================================================== -->
+      <h2>列表渲染</h2>
+      <h3>遍历数组</h3>
+      <ul>
+        <li v-for="p in persons" :key="p.id">{{p.name}}-{{p.age}}</li>
+        <!--<li v-for="(p,index) in persons" :key="index">{{p.name}}-{{p.age}}</li> 也可 -->
+      </ul>
+      <h3>遍历对象</h3>
+      <ul>
+        <li v-for="(val,key_obj) in car" :key="key_obj">{{key_obj}}-{{val}}</li>
+      </ul>
+      <h3>遍历字符串</h3>
+      <ul>
+        <li v-for="(val,index) in str" :key="index">{{val}}-{{index}}</li>
+      </ul>
+      <!-- 列表过滤和排序==================================================== -->
+      <h2>列表过滤</h2>
+      <ul>
+        <input type="text" placeholder="请输入姓名" v-model="keyWord" />
+        <button @click="sortType=1">年龄升序</button>
+        <button @click="sortType=2">年龄降序</button>
+        <button @click="sortType=0">原顺序</button>
+        <li v-for="s in filtStars" :key="s.id">
+          {{s.name}}-{{s.age}}-{{s.sex}}
+        </li>
+      </ul>
+      <!-- 过滤器==================================================== -->
+      <h3>现在的时间是：{{time| timeFormatter | mySlice}} </h3>
+    </div>
+  </body>
+  <script type="text/javascript">
+    // 全局过滤器
+    Vue.filter('mySlice',function(value){
+      return 
+    })
+    new Vue({
+      el: "#root",
+      data: {
+        name: "",
+        n: 0,
+        keyWord: "",
+        sortType: "0", //原顺序为0，升序为1，降序为2
+        time: 1679404113,
+        persons: [
+          { id: "001 ", name: "张三", age: 18 },
+          { id: "002", name: "李四", age: 19 },
+          { id: "003", name: "王五", age: 20 },
+        ],
+        stars: [
+          { id: "001 ", name: "马冬梅", age: 18, sex: "女" },
+          { id: "002", name: "周冬雨", age: 19, sex: "女" },
+          { id: "003", name: "周杰伦", age: 20, sex: "男" },
+          { id: "004", name: "汪伦", age: 1000, sex: "男" },
+        ],
+        // filtStars: [],用计算属性实现时这行要注释，watch则不同
+        car: {
+          name: "Audi A8",
+          price: "10w$",
+          color: "black",
+        },
+        str: "cancanneed",
+      },
+      computed: {
+        filtStars() {
+          const arr = this.stars.filter((p) => {
+            //接收过滤后的数组方便以后排序
+            return p.name.indexOf(this.keyWord) !== -1;
+          });
+          //判断是否需要排序
+          if (this.sortType) {
+            arr.sort((a, b) => {
+              return this.sortType === 1 ? a.age - b.age : b.age - a.age;
+            });
+          }
+          return arr;
+        },
+      } /* // 用watch实现列表过滤
+      watch:{
+        keyWord:{
+          immediate:true,
+          handler(newVal){
+            this.filtStars=this.stars.filter((ss)=>{
+              return ss.name.indexOf(newVal) !==-1
+            })
+          }
+        }
+      } */,
+      // 局部过滤器
+      filters: {
+        timeFormatter(timestamp) {
+          //这里可以写进行格式化的代码
+          var date = new Date(timestamp * 1000); //将时间戳转换为日期
+          var year = date.getFullYear(); //获取年份
+          var month = ("0" + (date.getMonth() + 1)).slice(-2); //获取月份，补零
+          var day = ("0" + date.getDate()).slice(-2); //获取日期，补零
+          var hour = ("0" + date.getHours()).slice(-2); //获取小时，补零
+          var minute = ("0" + date.getMinutes()).slice(-2); //获取分钟，补零
+          var second = ("0" + date.getSeconds()).slice(-2); //获取秒数，补零
+          return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+        },
+        mySlice(){
+          // 这里可以放代码，可以多层过滤
+          return 
+        }
+      },
+    });
+  </script>
+</html>
