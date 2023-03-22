@@ -73,3 +73,48 @@ data:function()可以简写成data(){}
 ### 8.2 computed和watch对比
 
 ![image-20230320190645890](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230320190645890.png)
+
+## 9 渲染
+
+### 9.1条件渲染
+
+### 9.2 列表渲染
+
+### 9.3 key的作用（！！！！）
+
+![image-20230321165113703](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321165113703.png)
+
+![image-20230321165910871](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321165910871.png)
+
+## 10数据监视原理
+
+![image-20230321203546742](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321203546742.png)
+
+![image-20230321204304944](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321204304944.png)
+
+## 11.表单
+
+![image-20230321210228880](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321210228880.png)
+
+## 12.过滤器
+
+![image-20230321213027823](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321213027823.png)
+
+## 13.内置指令
+
+### 13.1 v-html
+
+![image-20230321220246527](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321220246527.png)
+
+### 13.2 v-cloak
+
+![image-20230321221829214](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321221829214.png)
+
+### 13.3 v-once
+
+![image-20230321222022823](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321222022823.png)
+
+### 13.4 v-pre
+
+![image-20230321222151034](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321222151034.png)
+
