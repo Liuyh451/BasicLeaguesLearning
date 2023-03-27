@@ -118,3 +118,12 @@ data:function()可以简写成data(){}
 
 ![image-20230321222151034](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230321222151034.png)
 
+## 14. 自定义指令
+
+![image-20230322170400214](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230322170400214.png)
+
+配置属性：directives
+
+![image-20230322171926785](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230322171926785.png)
+
+![image-20230322173649609](C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20230322173649609.png)

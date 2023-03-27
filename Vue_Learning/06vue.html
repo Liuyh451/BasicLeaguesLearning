@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>生命周期</title>
+    <style>
+      * {
+        /* 去除所有元素默认的内外边距的值 */
+        padding: 0;
+        margin: 0;
+      }
+
+      html,
+      body {
+        /* 默认HTML，body的高度为0，为其设置高度以使后面的div可以用百分比设置高度 */
+        height: 100%;
+      }
+
+      .header {
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+        background-color: orange;
+      }
+
+      .main {
+        width: 100%;
+        height: 50%;
+      }
+
+      .main .left {
+        float: left;
+        width: 50%;
+        height: 100%;
+        background-color: #bfa;
+      }
+
+      .main .right {
+        float: left;
+        width: 50%;
+        height: 100%;
+        background-color: pink;
+      }
+      #circle {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: red;
+      }
+      #demo {
+        width: 0;
+        height: 0;
+        border-width: 20px;
+        border-style: solid;
+        border-color: transparent transparent red transparent;
+        border-top: none;
+      }
+      .parent {
+        font-size: 0;
+    }
+    
+    .child {
+        display: inline;
+        font-size: 16px;
+    }
+    </style>
+
+    <script type="text/javascript" src="../JS/vue.js"></script>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">1</div><div class="child">2</div>
+    </div>
+    
+    
+    <div id="circle"></div>
+    <div id="demo"></div>
+    <div class="header"></div>
+    <div class="main">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+
+    <div id="root">
+      <h2 :style="{opacity}">fuck you ysq</h2>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#root",
+      data: {
+        opacity: 1,
+      },
+      mounted() {
+        setInterval(() => {
+          this.opacity -= 0.01; // 每 20 毫秒将 op 减小 0.01
+          if (this.opacity <= 0) this.opacity = 1;
+        }, 20);
+      },
+    });
+  </script>
+</html>
